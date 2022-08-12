@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> convert hours to seconds </title>
+
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .container h2 {
+            display: flex;
+            justify-content: center;
+            margin-top: 10%;
+        }
+
+        .container h4 {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .container input {
+            font-size: 1.7rem;
+            margin-left: 40%;
+            margin-top: 10px;
+        }
+
+        .container button {
+            background-color: rgb(230, 182, 120);
+            height: 40px;
+            width: 80px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>HOURS INTO SECOND CONVERT</h2>
+        <input type="number" name="hour" id="hour">
+        <button type="submit" onclick="calculate()">CLICK</button>
+
+        <h4 id="output"></h4>
+    </div>
+
+    <script>
+        calculate = () => {
+            const hour = document.getElementById("hour").value;
+            const output = document.getElementById("output");
+            if (hour == '' || isNaN(hour)) {
+                output.innerText = "please fill the field";
+            } else {
+                const sec = (hour * 60) * 60;
+
+                output.innerText = + hour + " " + "hours contains" + " " + sec + " " + "seconds";
+            }
+        }
+    </script>
+</body>
+
+</html>
